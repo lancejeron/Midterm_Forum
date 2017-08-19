@@ -1,0 +1,27 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/base
+//- This is how we insert dynamic content to extended templates
+block body
+    .title GO Post
+    hr
+    .title Create Account
+    br
+    h1 
+    p
+        form(method="POST" action="/signup")
+            .field
+                .label Username
+                .control 
+                input.input(type="text" placeholder="Username" name="user_name")
+                .label Email
+                .control 
+                input.input(type="text" placeholder="Email" name="user_email")
+                .label Birthday
+                .control 
+                input.input(type="date" placeholder="mm/dd/yy" name="user_birthday")
+                .label Password
+                .control 
+                input.input(type="password" placeholder="Password" name="user_password")
+            input(type="submit" value="Sign-up")
+            br
+        a(href='/login') <u><i>  Back </u> </i>

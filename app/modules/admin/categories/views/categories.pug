@@ -1,0 +1,29 @@
+extends ../../../../templates/master
+
+block content
+    h1.title
+        span.fa.fa-users
+        | &nbsp; Categories
+    
+    a.button.is-primary.pull-right(href="/admin/categories/new")
+        span.fa.fa-plus
+        | &nbsp; Add Category
+    table.table.is-fullwidth
+        thead
+            tr
+                th ID
+                th Category Name
+                //- th E-mail
+                //- th Password
+                //- th User Type
+        
+        tbody
+            each categories in category
+                tr
+                    td= categories.category_id
+                    td: a(href=`/admin/categories/${categories.category_id}`)= categories.category_name
+                    //- td= users.user_email
+                    td
+                        a(href=`/admin/categories/${categories.category_id}`): span.fa.fa-edit
+                        | &nbsp;
+                        a(href=`/admin/categories/${categories.category_id}/remove`): span.fa.fa-remove

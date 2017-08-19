@@ -1,0 +1,37 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master
+
+//- This is how we insert dynamic content to extended templates
+block content
+    <div id= "sheader">
+    .title GO Post
+    hr
+    .title What is in your Mind?
+     </div>
+    br
+    <div id="signd">
+    h1 
+    p
+        form(method="POST" action="/post")
+            .field
+                .label Category
+                .control 
+                input.input(type="number" placeholder="Category ID" name="category_id")
+                .label Author
+                .control 
+                input.input(type="number" placeholder="Author ID" name="user_id")
+                .label Title
+                .control 
+                input.input(type="text" placeholder="Title" name="post_title")
+                .label Content
+                .control 
+                input.input(type="text" placeholder="type your post here" name="post_content")
+                .label Date
+                .control 
+                input.input(type="date" placeholder="mm/dd/yy" name="post_date")
+            </div>
+            <div id="button">
+            input.button.is-primary.is-pulled-left(type="submit" value="Post")
+            br
+        a(href='/forum') <u><i>  Back </u> </i>
+        </div>

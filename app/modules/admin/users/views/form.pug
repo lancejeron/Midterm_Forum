@@ -1,0 +1,27 @@
+extends ../../../../templates/master
+
+block content
+    h1.title
+        span.fa(class= user ? 'fa-user' : 'fa-user-plus')
+        | &nbsp; #{user ? 'Edit': 'Add'} User
+
+    form(method="POST" action=`/admin/users${user ? `/${user.user_id}?_method=PUT` : ''}`)
+        .field
+            .label Username
+            .control
+                input.input(type="text" name="user_name" value= user ? user_name : '')
+        .field
+            .label Email
+            .control
+                input.input(type="email" name="user_email" value= user ? user_email : '')
+        .field
+            .label Birthdate
+            .control
+                input.input(type="date" name="user_birthdate" value= user ? user_birthdate : '')
+        
+        if !user
+            .field
+                .label Password
+                .control
+                    input.input(type="password" name="user_password")
+        input.button.is-primary(type="submit" value="Submit")

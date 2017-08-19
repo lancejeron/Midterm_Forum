@@ -1,0 +1,28 @@
+//- This is how we extend a template using the 'extends' keyword
+extends ../../../templates/master
+
+//- This is how we insert dynamic content to extended templates
+block content
+    .title GO Post
+    a(class='button', href='/post') POST
+        //- table.table.is-fullwidth
+        //- thead
+        //-     tr
+        //-         th Post ID
+        //-         th User ID
+        //-         th Category ID 
+        //-         th Post Title
+        //-         th Post Content
+        //-         th Post Date
+        //- tbody
+        //- each posts in post
+        //-         tr
+        //-             td= posts.post_id 
+        //-             td= posts.user_id
+        //-             td= posts.category_id
+        //-             td= posts.post_title
+        //-             td= posts.post_content
+        //-             td= posts.post_date
+
+
+        
